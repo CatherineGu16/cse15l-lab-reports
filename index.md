@@ -1,5 +1,5 @@
 
-# Catherine Gu's page
+# **Catherine Gu's page**
 
 ## Lab Reports
 * [Lab Report 1](lab-report-1-week-2.html)

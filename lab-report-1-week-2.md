@@ -1,13 +1,12 @@
 # **Lab Report 1: Remote Access**
 
-## **Installing VSCode**
+## Installing VSCode
 To install VSCode, go to the [VSCode website](https://code.visualstudio.com/) and click the download button for Windows. Follow the download instructions and after opening the VSCode, you should see a screen like this:
 <br /><br />
 ![Image](photos/VSCodeStart.PNG)
 
 ---
-
-## **Remotely Connecting**
+## Remotely Connecting
 After installing the OpenSSH program and finding your [course account](https://sdacs.ucsd.edu/~icc/index.php) for the course, open VSCode and click Terminal, then New Terminal from the top menu bar. This will open up a powershell terminal at the bottom of the screen. 
 <br /> <br />
 In the terminal, type `ssh cs15lwi22ars@ieng6.ucsd.edu` to begin the connection to the ucsd server (Make sure to replace the last three letters before the @ with your course-specific account letters).
@@ -19,6 +18,16 @@ Your terminal should look like this: <br /> <br />
 
 ---
 ## Trying Some Commands
+You can use many commands in the terminal including, but not limited to the following: <br />
+- `cd` : changes working directory
+- `cd ..` : change directory back to the parent directory of the current directory
+- `pwd` : print working directory
+- `ls` : lists all files and directories under current directory
+- `mkdir` : make new directory
+<br />
+Here is an example of using some of the commands in the terminal: <br />
+![ImageTerminal](photos/TerminalBasicCommands.PNG)
+<br />
 ---
 ## Moving Files with scp
 ---
