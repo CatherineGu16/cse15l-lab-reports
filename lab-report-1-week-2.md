@@ -1,10 +1,11 @@
-# Lab Report 1: Remote Access
+# **Lab Report 1: Remote Access**
 
-## Installing VSCode
-To install VSCode, 
+## **Installing VSCode**
+To install VSCode, go to the [VSCode website](https://code.visualstudio.com/) and click the download button for your appropriate computer. Follow the download instructions and after opening the VSCode, you should see a screen like this:
+![Image](photos/VSCodeStart.PNG)
 ---
 
-## Remotely Connecting
+## **Remotely Connecting**
 ---
 ## Trying Some Commands
 ---
