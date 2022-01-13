@@ -25,7 +25,7 @@ You can use many commands in the terminal including, but not limited to the foll
 - `ls` : lists all files and directories under current directory
 - `mkdir` : make new directory
 
-<br /> <br />
+<br />
 Here is an example of using some of the commands in the terminal: 
 <br /> <br />
 
@@ -38,9 +38,13 @@ In order to move files into ssh, we need to utilize the command `scp`. Make sure
 <br /> <br />
 In the terminal, type in the command `scp WhereAmI.java cs15lwi2ars@ieng6.ucsd.edu:~/`. 
 <br /> <br />
-Fill in the password for your ssh and the `WhereAmI.java` file should have been copied into the remote computer.
+Fill in the password for your ssh like before and the `WhereAmI.java` file should be copied into the remote computer. After running this command the terminal should look like this: 
+<br /> <br />
+![Image](photos/scpCommand.PNG)
+
 ---
 ## Setting an SSH Key
+
 ---
 ## Optimizing Remote Running
 ---
