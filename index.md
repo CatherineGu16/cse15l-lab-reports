@@ -18,4 +18,4 @@ Hello, world!
 ---
 
 [Lab Report 1](lab-report-1.html)
-[Lab Report 1](https://CatherineGu16.github.io/CSE15L-LAB-REPORTS/lab-report-1.html)
+[Lab Report 1](https://CatherineGu16.github.io/cse15l-lab-reports/lab-report-1.html)
