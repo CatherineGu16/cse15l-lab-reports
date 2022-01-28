@@ -4,7 +4,7 @@
 ![Image](photos/parseTest4_change.PNG)
 <br />
 
-[Link to test-file4.md](https://github.com/CatherineGu16/markdown-parse/blob/main/test-file4.md)
+**Link to failure-inducing input:** [test-file4.md](https://github.com/CatherineGu16/markdown-parse/blob/main/test-file4.md)
 
 **Symptoms in running main:** <br />
 ```
@@ -12,7 +12,6 @@ PS C:\Users\cathe\Documents\GitHub\markdown-parse> javac MarkdownParse.java
 PS C:\Users\cathe\Documents\GitHub\markdown-parse> java MarkdownParse test-file4.md
 [43245.jpg, https://something.com]
 ```
-<br />
 
 **Symptoms in running jUnit Tester:** <br />
 ```
@@ -35,7 +34,7 @@ In this code change, we saw from running both the main method in MarkdownParse.j
 ![Image](photos/parseTest6_change.PNG)
 <br />
 
-[Link to test-file6.md](https://github.com/CatherineGu16/markdown-parse/blob/main/test-file6.md)
+**Link to failure-inducing input:** [test-file6.md](https://github.com/CatherineGu16/markdown-parse/blob/main/test-file6.md)
 
 **Symptoms in running main:** 
 ```
@@ -43,7 +42,6 @@ PS C:\Users\cathe\Documents\GitHub\markdown-parse> javac MarkdownParse.java
 PS C:\Users\cathe\Documents\GitHub\markdown-parse> java MarkdownParse test-file6.md
 [page.com]
 ```
-<br />
 
 **Symptoms in running jUnit Tester:** <br />
 ```
@@ -62,10 +60,10 @@ Tests run: 4,  Failures: 1
 The symptom of this bug was the incorrect addition of `[page.com]` to the list of links. In test-file6.md, there is the word "paragraph" between the set of brackets and the set of parentheses, which means it should not be categorized as a link. The bug in our program was that we did not account for the syntaxical structure of links in that the character right after the closing bracket must be the open parentheses.
 
 ## Code Change 3: test-file6edit.md
-![Image](photos/parseTest6_change.PNG)
+![Image](photos/parseTest6edit_change.PNG)
 <br />
 
-[Link to test-file6.md](https://github.com/CatherineGu16/markdown-parse/blob/main/test-file6edit.md)
+**Link to failure-inducing input:** [test-file6edit.md](https://github.com/CatherineGu16/markdown-parse/blob/main/test-file6edit.md)
 
 **Symptoms in running main:** 
 ```
@@ -73,7 +71,6 @@ PS C:\Users\cathe\Documents\GitHub\markdown-parse> javac MarkdownParse.java
 PS C:\Users\cathe\Documents\GitHub\markdown-parse> java MarkdownParse test-file6edit.md
 []
 ```
-<br />
 
 **Symptoms in running jUnit Tester:** <br />
 ```
