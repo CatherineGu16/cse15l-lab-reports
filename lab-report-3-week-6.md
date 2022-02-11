@@ -15,7 +15,7 @@ In this image, I demonstrate running ssh using the alias I created in the previo
 <br />
 
 ## scp command
-![Image](scp_using_ieng6.PNG)
+![Image](photos/scp_using_ieng6.PNG)
 <br />
 
-This image shows how I copied a file into my ssh account using `ieng6` and not my full username. Then I logged into my ssh account and checked to make sure that the file was indeed copied in.
+This image shows how I copied a file (test-file.md) into my ssh account using `ieng6` and not my full username. Then I logged into my ssh account and checked to make sure that the file was indeed copied in.
