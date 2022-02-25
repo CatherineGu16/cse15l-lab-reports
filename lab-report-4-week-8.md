@@ -20,7 +20,7 @@
 
 ## MarkdownParseTest Code
 ```
-@Test
+    @Test
     public void snippet1() throws IOException{
         Path fileName = Path.of("snippet1.md");
 	    String contents = Files.readString(fileName);
@@ -57,28 +57,28 @@
 ## My Implementation
 Snippet 1 JUnitFail: <br />
 ![snippet1](photos\snippet1_JUnitFail.PNG)
-<br /> <br />
+<br />
 
 Snippet 2 JUnitFail: <br />
 ![snippet2](photos\snippet2_JUnitFail.PNG)
-<br /> <br />
+<br />
 
 Snippet 3 JUnitFail: <br />
 ![snippet3](photos\snippet3_JUnitFail.PNG)
-<br /> <br />
+<br />
 
 ## Reviewed Implementation
 Snippet 1 JUnitFail: <br />
 ![snippet1](photos\Rsnippet1_JUnitFail.PNG)
-<br /> <br />
+<br />
 
 Snippet 2 JUnitFail: <br />
 ![snippet2](photos\Rsnippet2_JUnitFail.PNG)
-<br /> <br />
+<br />
 
 Snippet 3 JUnitFail: <br />
 ![snippet3](photos\Rsnippet3_JUnitFail.PNG)
-<br /> <br />
+<br />
 
 ## Can the program be fixed in <10 lines?
 ### Snippet 1 Fix
