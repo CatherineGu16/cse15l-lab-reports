@@ -35,57 +35,12 @@ Snippet 3 JUnitFail: <br />
 ![snippet3](photos\Rsnippet3_JUnitFail.PNG)
 <br /> <br />
 
-For each test above:
-Decide on what it should produce by using either VScode preview or the CommonMark demo site
-Showing the code in MarkdownParseTest.java for how you turned it into a test
-For your implementation, the corresponding output when running the tests; if it passed, say so. If it didn’t pass, show the specific part of the JUnit output that shows the test failure.
-For the implementation you reviewed, the corresponding output when running the tests; if it passed, say so. If it didn’t pass, show the specific part of the JUnit output that shows the test failure.
+## Can the program be fixed in <10 lines?
+### Snippet 1 Fix
+- No, I do not think there can be a code change less than 10 lines that would make the program work for inline code with backticks. Not only would we have to look for the beginning and end of each backtick that indicates where the code section ends, we also have to check the situations where the backticks are ignored and treated as regular text (ie. inside the parentheses).
 
-snippet 1: 
-`[a link`](url.com)
+### Snippet 2 Fix
+- Yes, having to search and pair up each set of parentheses or brackets would only take up a few lines if you used a stack that pushed and popped each set. The escape sequence can be treated appropriately using a simple if statement checking for the character right before the bracket or parentheses.
 
-[another link](`google.com)`
-
-[`cod[e`](google.com)
-
-[`code]`](ucsd.edu)
-
-snippet 2:
-[a [nested link](a.com)](b.com)
-
-[a nested parenthesized url](a.com(()))
-
-[some escaped \[ brackets \]](example.com)
-
-snippet 3:
-[this title text is really long and takes up more than 
-one line
-
-and has some line breaks](
-    https://www.twitter.com
-)
-
-[this title text is really long and takes up more than 
-one line](
-    https://ucsd-cse15l-w22.github.io/
-)
-
-
-[this link doesn't have a closing parenthesis](github.com
-
-And there's still some more text after that.
-
-[this link doesn't have a closing parenthesis for a while](https://cse.ucsd.edu/
-
-
-
-)
-
-And then there's more text
-
-Answer the following questions with 2-3 sentences each:
-- Do you think there is a small (<10 lines) code change that will make your program work for snippet 1 and all related cases that use inline code with backticks? If yes, describe the code change. If not, describe why it would be a more involved change.
-- No, I do not think there can be a code change less than 10 lines that would make the program work for inline code with backticks. Not only would we have to look for the beginning and end of each backtick that indicates where the code section ends, we also have to check to make sure the backticks are included in the link when the backtick is inside the parentheses. 
-
-- Do you think there is a small (<10 lines) code change that will make your program work for snippet 2 and all related cases that nest parentheses, brackets, and escaped brackets? If yes, describe the code change. If not, describe why it would be a more involved change.
-- Do you think there is a small (<10 lines) code change that will make your program work for snippet 3 and all related cases that have newlines in brackets and parentheses? If yes, describe the code change. If not, describe why it would be a more involved change.
+### Snippet 3 Fix
+- No, the links will only become non-links when there is more than one new line entered in a row in the brackets and if the new line is strictly before and/or after the text int he parentheses. Our program would need to check that there is no more than one new line entered and then trim the excess before and after for the parentheses but allow for new lines between non-blank characters in the string in the brackets, resulting in hefty if statements.
