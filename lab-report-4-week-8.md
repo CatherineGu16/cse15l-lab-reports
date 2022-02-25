@@ -2,13 +2,58 @@
 
 ## Repo Links:
 - [My implementation](https://github.com/CatherineGu16/CSE15L-RoseateSpoonbill.git)
-- [Reviewed Implementation](https://github.com/Shree-G/markdown-parse.git)
+- [Original Reviewed Implementation](https://github.com/Shree-G/markdown-parse.git)
+- [Edited Reviewed Implementation](https://github.com/CatherineGu16/NubianGoatMarkdownParse.git)
 
 ## Expected Results:
 - Snippet1: [%60google.com, google.com, ucsd.edu]
+    - url.com should not be a link because part of the [] section has backticks and should not be taken into account as part of hte link syntax
+    - %60 is the url-encoding for `` ` ``
+    - complete code block inside `` [] `` is ok
 - Snippet2: [a.com, a.com(()), example.com]
+    - complete link within `` [] `` is ok
+    - complete sets of parentheses inside ``  () `` should be counted as link
+    - escaped characters should be included in the text of the link and not end of `` [] `` section of link syntax
 - Snippet3: [https://ucsd-cse15l-w22.github.io/]
+    - more than one new lines consecutively entered in `` [] ``
+    - single new lines before and after link in `` () `` is ok and should be kept as links
 
+## MarkdownParseTest Code
+```
+@Test
+    public void snippet1() throws IOException{
+        Path fileName = Path.of("snippet1.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("%60google.com");
+        expected.add("google.com");
+        expected.add("ucsd.edu");
+        assertEquals(expected, links);
+    }
+
+    @Test
+    public void snippet2() throws IOException{
+        Path fileName = Path.of("snippet2.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("a.com");
+        expected.add("a.com(())");
+        expected.add("example.com");
+        assertEquals(expected, links);
+    }
+
+    @Test
+    public void snippet3() throws IOException{
+        Path fileName = Path.of("snippet3.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        ArrayList<String> expected = new ArrayList<>();
+        expected.add("https://ucsd-cse15l-w22.github.io/");
+        assertEquals(expected, links);
+    }
+```
 ## My Implementation
 Snippet 1 JUnitFail: <br />
 ![snippet1](photos\snippet1_JUnitFail.PNG)
