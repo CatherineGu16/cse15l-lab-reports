@@ -11,8 +11,9 @@ which compared the file that was generated from running a make test in the group
 ![diff212](photos\diff212.PNG)
 <br />
 
-In this test-file, our version provides the correct output but the commonmark version incorrectly finds a link. The correct output should be *no link* added because the code should make sure that the next character right after the `]` is `(`. A valid link cannot have other characters between the closing and opening parentheses.
-The expected result of the .md file is: no links detected <br />
+In this test-file, our version provides the correct output but the commonmark version incorrectly finds a link. The correct output should be an empty array because the code should make sure that the next character right after the `]` is `(`. A valid link cannot have other characters between the closing and opening parentheses. A bug fix would be to include aonther `if` statement that tests for `nextCloseBracket == openParen - 1`.
+<br />
+The expected result of the .md file is: `[]` (no links detected) <br />
 
 ## Test #2: 342.md in line 542
 342.md contents: ``[not a `link](/foo`)``
@@ -24,5 +25,5 @@ The expected result of the .md file is: no links detected <br />
 In test-file 342.md, the output of our implementation is correct but the commonmark implementation is not because it ignored the backticks that indicate a code block and included that as regular text. One bug in the commonmark version is that it does not omit the text found in code blocks. A fix for this would be to have another `if` statement that will check for matching sets of backticks and skip the contents inside when searching for links.
 The code fix could be inserted within this block of code: <br />
 ![code](photos\212codefix.PNG)
-
-The expected result of the .md file is: no link detected <br />
+<br />
+The expected result of the .md file is: `[]` (no link detected) <br />
