@@ -1,13 +1,34 @@
 # **Lab Report 5: Differences in MarkdownParse**
 
-## Test #1:
+## How I found the differences:
+I found the differences by first running the `diff` command comparing the results from my group's version of markdown-parse and the common-mark spec markdown-parse code. Then I picked some of the files that recorded text as links and opened the files corresponding with that to look at the text in those files.
+## Test #1: 212.md
+212.md contents:<br />
+![212contents](photos\212contents.PNG)
 
+Comparison group vs markdown: <br />
+![diff212](photos\diff212.PNG)
+<br />
 
-In lab 9, you experimented with the many tests provided from commonmark-spec. For this lab report, choose any two tests from the 652 commonmark-spec tests where your implementation (or a representative implementation from your group) had different answers than the implementation we provided for lab 9. Note that this is the implementation in the markdown-parse repository, not the one you did today in lab 10. The tests with different answers should correspond to different bugs – that is, you couldn’t easily fix both with one code change.
+In this test-file, our version provides the correct output but the commonmark version incorrectly finds a link. The correct output should be *no link* added because the code looked through code within the backticks that indicate a code block. One bug in the commonmark version is that it does not omit the text found in code blocks. A fix for this would be to have code that will check for matching sets of backticks and skip the contents inside when searching for links.
+The code fix could be inserted within this block of code: <br />
+![code](photos\212codefix.PNG)
 
-Explain:
+The expected result of the .md file is: <br />
+![expected](photos\212expected.PNG)
 
-How you found the tests with different results (Did you use diff on the results of running a bash for loop? Did you search through manually? Did you use some other programmatic idea?)
-For each test:
-Describe which implementation is correct, or if you think neither is correct, by showing both actual outputs and indicating what the expected output is.
-For the implementation that’s not correct (or choose one if both are incorrect), describe the _bug (the problem in the code). You don’t have to provide a fix, but you should be specific about what is wrong with the program, and show the code that should be fixed.
+## Test #2: 542.md
+542.md contents:<br />
+![542contents](photos\542contents.PNG)
+
+Comparison group vs markdown: <br />
+![diff542](photos\diff542.PNG)
+<br />
+
+In this test-file both versions of markdown-parse is incorrect because both implementations do not take into account the reference version of inserting a link where the text in brackets can be specified to a certain link later correctly. The `[bar]` that was found in line two of the file is specified with `[bar]: \url "title"` later in the file dictating that `bar` is the text with link of `title`. Thus the commonmark implementation is incorrect because although it detects a link, the link name is incorrect.
+
+The expected result of the .md file is: <br />
+![expected](photos\542expected.PNG)
+<br />
+
+Source: [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#links)
