@@ -12,7 +12,7 @@ which compared the file that was generated from running a make test in the group
 ![diff212](photos\diff212.PNG)
 <br />
 
-In this test-file, our version provides the correct output but the commonmark version incorrectly finds a link. The correct output should be *no link* added because the code looked through code within the backticks that indicate a code block. One bug in the commonmark version is that it does not omit the text found in code blocks. A fix for this would be to have another if statement that will check for matching sets of backticks and skip the contents inside when searching for links.
+In this test-file, our version provides the correct output but the commonmark version incorrectly finds a link. The correct output should be *no link* added because the code looked through code within the backticks that indicate a code block. One bug in the commonmark version is that it does not omit the text found in code blocks. A fix for this would be to have another `if` statement that will check for matching sets of backticks and skip the contents inside when searching for links.
 The code fix could be inserted within this block of code: <br />
 ![code](photos\212codefix.PNG)
 
