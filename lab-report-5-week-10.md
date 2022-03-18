@@ -26,4 +26,10 @@ In test-file 342.md, the output of our implementation is correct but the commonm
 The code fix could be inserted within this block of code: <br />
 ![code](photos\212codefix.PNG)
 <br />
+
+More specifically, the if statement should be checked at the beginning of the while loop between these two lines so as to check for block code before checking for specific characters corresponding to link format:
+```
+while(currentIndex < markdown.length()) {
+    int nextOpenBracket = markdown.indexOf("[", currentIndex);])
+```
 The expected result of the .md file is: `[]` (no link detected) <br />
