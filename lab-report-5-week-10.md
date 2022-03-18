@@ -11,7 +11,11 @@ which compared the file that was generated from running a make test in the group
 ![diff212](photos\diff212.PNG)
 <br />
 
-In this test-file, our version provides the correct output but the commonmark version incorrectly finds a link. The correct output should be an empty array because the code should make sure that the next character right after the `]` is `(`. A valid link cannot have other characters between the closing and opening parentheses. A bug fix would be to include aonther `if` statement that tests for `nextCloseBracket == openParen - 1`.
+In this test-file, our version provides the correct output but the commonmark version incorrectly finds a link. The correct output should be an empty array because the code should make sure that the next character right after the `]` is `(`. A valid link cannot have other characters between the closing and opening parentheses. A bug fix would be to include another `if` statement that tests for `nextCloseBracket == openParen - 1`. This should be inserted after these lines of code in the commonmark implementation:
+```
+    int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
+    int openParen = markdown.indexOf("(", nextCloseBracket);
+```
 <br />
 The expected result of the .md file is: `[]` (no links detected) <br />
 
